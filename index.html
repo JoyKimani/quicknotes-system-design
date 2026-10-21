@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#183b36" />
+    <title>QuickNotes | API client</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="api.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="QuickNotes home">
+        <span class="brand-mark" aria-hidden="true">Q</span>
+        <span>quicknotes</span>
+      </a>
+      <span class="header-note">SERVICE CLIENT <span aria-hidden="true">/</span> 01</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Your ideas, in good company</p>
+        <h1 id="page-title">Notes for the<br /><em>next thing.</em></h1>
+        <p class="intro-copy">A small client for exploring how notes move between a browser and an API.</p>
+      </section>
+
+      <section class="workspace" aria-labelledby="notes-heading">
+        <div class="workspace-heading">
+          <div>
+            <p class="section-index">COLLECTION <span>01</span></p>
+            <h2 id="notes-heading">Your notes</h2>
+          </div>
+          <button id="load-btn" class="load-button" type="button">
+            <span class="button-icon" aria-hidden="true">↻</span>
+            <span>Load notes</span>
+          </button>
+        </div>
+
+        <p id="status" class="status" role="status" aria-live="polite" data-state="idle">Ready to connect to the sample API.</p>
+
+        <form id="note-form" novalidate>
+          <div class="form-heading">
+            <div>
+              <p class="section-index">NEW ENTRY <span>02</span></p>
+              <h2>Add a note</h2>
+            </div>
+            <span class="field-hint">Title required <span aria-hidden="true">·</span> 100 characters max</span>
+          </div>
+          <div class="form-fields">
+            <div class="field title-field">
+              <label for="title-input">Title</label>
+              <input id="title-input" name="title" type="text" maxlength="100" placeholder="Give this thought a name" autocomplete="off" />
+            </div>
+            <div class="field body-field">
+              <label for="body-input">Note</label>
+              <textarea id="body-input" name="body" rows="3" placeholder="Add a little context (optional)"></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <span class="form-footnote">Kept simple. Made to grow.</span>
+            <button id="submit-btn" class="submit-button" type="submit">Create note <span aria-hidden="true">↗</span></button>
+          </div>
+        </form>
+
+        <ul id="notes-list" aria-live="polite" aria-busy="false"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <span>QUICKNOTES</span>
+      <span>API CLIENT STUDY <span aria-hidden="true">/</span> 2026</span>
+    </footer>
+  </body>
+</html>
